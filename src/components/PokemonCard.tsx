@@ -16,5 +16,3 @@ function PokemonCard({pokemon} : typeOfProps) {
 
   
   export default PokemonCard;
-
-  
