@@ -1,8 +1,7 @@
 import "./App.css";
 
 import PokemonCard from "./components/PokemonCard";
-function App({pokemon}) {
-  // const pokemon=props;
+function App({}) {
   return (
 <div>
 
