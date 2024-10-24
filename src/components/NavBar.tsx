@@ -20,12 +20,15 @@ interface NavBarProps {
   function NavBar({setPokemonIndex,pokemonIndex,pokemonList}: NavBarProps){
    
     console.log(pokemonIndex)
+    
     return (
    
     <div>
         {pokemonList
         .map((article, index) => (
-          <button type="button" onClick={() => setPokemonIndex(index)} >{article.name}</button>      
+         
+          <button type="button" onClick={() => article.name==="pikachu" ? (alert("pika pikachu"),setPokemonIndex(index)):setPokemonIndex(index) } >{article.name}</button>      
+          
         ))}
     </div>
     );

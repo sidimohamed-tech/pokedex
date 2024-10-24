@@ -2,21 +2,23 @@ import "./App.css";
 import { useState } from "react";
 import PokemonCard from "./components/PokemonCard";
 import NavBar from "./components/NavBar";
+import { useEffect } from "react";
+
 
 function App({}) {
+  // const Alerte = () => {
+  //   alert("hello pokemon trainer : ");
+  // }
+  useEffect(
+    () => {
+      alert("hello pokemon trainer : ");
+    },
+    []
+  );
   const [pokemonIndex, setPokemonIndex] = useState(0);
-
-  // const handleClickback=()=>{
-  //     setPokemonIndex(pokemonIndex -1);
-
-  //   }
-  //   const handleClicknext=()=>{
-  //     setPokemonIndex(pokemonIndex +1);
-  //   }
-  
-  console.log("Pokemon index : " + pokemonIndex);
- 
   return (
+  
+   
     <div>
           <NavBar setPokemonIndex={setPokemonIndex} pokemonIndex={pokemonIndex} pokemonList={pokemonList}/>
 
