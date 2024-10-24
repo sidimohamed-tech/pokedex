@@ -1,15 +1,27 @@
+import NavBar from "./NavBar";
 interface typeOfProps
 {
-  pokemon : {name:string;
-    imgSrc?:string;}
-  
+  pokemon : {
+    name:string;
+    imgSrc?:string;
+  }
 }
 
 function PokemonCard({pokemon} : typeOfProps) {
-    let imagevalue=pokemon.imgSrc;
-    return (imagevalue ?(<figure><img src={pokemon.imgSrc} alt="Bulbasaur" />
-    <figcaption>{pokemon.name}</figcaption></figure>) : <p>???</p> );
-    
+    console.log(pokemon);
+    let imagevalue = pokemon.imgSrc;
+    return (
+      imagevalue 
+      ? 
+      (
+      <figure>
+        <img src={pokemon.imgSrc} alt="Bulbasaur" />
+        <figcaption>{pokemon.name}</figcaption>
+      </figure>
+      ) 
+      : 
+      <p>???</p> 
+    );
 
   }
 

@@ -1,33 +1,33 @@
+
+import PokemonCard from "./PokemonCard";
 import { useState } from "react";
 
 interface Pokemon {
     name: string;
     imgSrc?: string;
-  }
+    pokemon : {name:string;
+      imgSrc?:string;}
+}
   
-  interface NavBarProps {
+interface NavBarProps {
+  pokemonIndex: number;
+  setPokemonIndex: (index: number) => void;
+  pokemonList: Pokemon[];
+}
 
-    pokemonIndex: number;
-    setPokemonIndex: (index: number) => void;
-    pokemonList: Pokemon[];
-  }
 
+  
   function NavBar({setPokemonIndex,pokemonIndex,pokemonList}: NavBarProps){
-    // const [pokemonIndex,setPokemonIndex]=useState(0);
-
-  const handleClickback=()=>{
-      setPokemonIndex(pokemonIndex -1);
-
-    }
-    const handleClicknext=()=>{
-      setPokemonIndex(pokemonIndex +1);
-    }
+   
+    console.log(pokemonIndex)
     return (
+   
     <div>
-    {pokemonIndex > 0 ? <button type="button" onClick={handleClickback}>précedent</button>:<p></p>}
-    {pokemonIndex < pokemonList.length - 1 ?<button type="button" onClick={handleClicknext}>Suivant</button>:<p></p>}
+        {pokemonList
+        .map((article, index) => (
+          <button type="button" onClick={() => setPokemonIndex(index)} >{article.name}</button>      
+        ))}
     </div>
-
     );
 
 
